@@ -120,6 +120,23 @@ allDivBoxes.forEach((div, index) => {
   div.classList.add(classToPrint)
 })
 
+// logica programma
+allDivBoxes.forEach((box) => {
+  box.addEventListener("click", () => {
+    // controllo la classe assegnata al box
+    if (box.classList.contains("bomb")) {
+      box.classList.add("red")
+      alert("sei saltato in aria")
+      reveal(allDivBoxes)
+    } else {
+      box.classList.add("green")
+    }
+
+    // se la classe è safe posso andare avanti nel gioco --> coloro la casella di verde
+    // se la classe è bomb sono saltato in aria --> coloro la casella di rosso e scrivo hai perso
+  })
+})
+
 function bombs_array(range) {
   const allBombs = []
   for (let index = 0; index < 16; index++) {
@@ -166,7 +183,17 @@ function loopingThroughBombs(array) {
   }
 }
 
-loopingThroughBombs(bombs_to_distribute)
+// loopingThroughBombs(bombs_to_distribute)
+
+function reveal(array) {
+  array.forEach((el) => {
+    if (el.classList.contains("bomb")) {
+      el.classList.add("red")
+    } else {
+      el.classList.add("green")
+    }
+  })
+}
 
 /* 
 
