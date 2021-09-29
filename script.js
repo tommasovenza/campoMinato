@@ -111,15 +111,14 @@ const allDivBoxes = Array.from(document.querySelectorAll(".box"))
 const bombs_to_distribute = shuffleBombs(bombs_array(100))
 console.log(bombs_to_distribute)
 
-for (let index = 0; index < bombs_to_distribute.length; index++) {
-  let element = bombs_to_distribute[index]
-  console.log(element)
+// non bisogna fare un ciclo dentro al ciclo, ma fare tutto allo stesso tempo
 
-  for (let j = 0; j < allDivBoxes.length; j++) {
-    let currentBox = allDivBoxes[j]
-    currentBox.dataset.safeOrNot = element
-  }
-}
+allDivBoxes.forEach((div, index) => {
+  const classToPrint = bombs_to_distribute[index]
+  // console.log(div, classToPrint)
+
+  div.classList.add(classToPrint)
+})
 
 function bombs_array(range) {
   const allBombs = []
@@ -157,3 +156,36 @@ function shuffleBombs(array) {
 
   return array
 }
+
+function loopingThroughBombs(array) {
+  for (let index = 0; index < array.length; index++) {
+    // let element = ""
+    element = array[index]
+
+    return element
+  }
+}
+
+loopingThroughBombs(bombs_to_distribute)
+
+/* 
+
+i miei errori e come l'avevo pensata, facendo un ciclo dentro ad un altro ciclo
+
+*/
+
+// for (let index = 0; index < bombs_to_distribute.length; index++) {
+//   let element = bombs_to_distribute[index]
+//   console.log(element)
+
+//   for (let j = 0; j < allDivBoxes.length; j++) {
+//     let currentBox = allDivBoxes[j]
+//     currentBox.dataset.safeOrNot = element
+//   }
+// }
+
+// for (let index = 0; index < allDivBoxes.length; index++) {
+//   const currentDiv = allDivBoxes[index]
+//   // currentDiv.classList.add(loopingThroughBombs(bombs_to_distribute))
+//   currentDiv.dataset.test = loopingThroughBombs(bombs_to_distribute)
+// }
