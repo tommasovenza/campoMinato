@@ -36,6 +36,7 @@ p {
 /* styles for the table */
 .container {
     max-width: 500px;
+    margin-bottom: 2em;
 }
 .row {
     width: 100%;
