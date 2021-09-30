@@ -4,7 +4,6 @@
 // campoMinato(range, arrayCasualsNumbers)
 
 // All functions
-
 function campoMinato(range, arrayCasualsNumbers) {
   console.log(arrayCasualsNumbers)
 
@@ -141,7 +140,7 @@ function bombs_array(range) {
   return finalArray
 }
 
-bombs_array(100)
+// bombs_array(100)
 
 function shuffleBombs(array) {
   let counter = array.length

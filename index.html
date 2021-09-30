@@ -4,25 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
+
+    <!-- Google Font Gemunu Libre-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Custom Script -->
+    <script src="script.js" defer></script>
     <title>campo minato</title>
 </head>
 <body>
 
-    <div class="app">
-        <div class="rules">
-            <H1>Campo Minato</H1>
-            <h4>Regole</h4>
-            <p>Scegli il livello di difficoltà
-                0 -> 100 caselle / 16bombe
-                1 ->  80 caselle / 16bombe
-                2 ->  50 caselle / 16bombe 
-            </p>
-            <p>Nel campo minato sono presenti 16 bombe</p>
-        </div>
-        <div class="container">
-    
+    <div class="app-wrapper">
+        <!-- the app -->
+        <div class="app">
+            <!-- some text -->
+            <div class="rules flex">
+                <H1>Campo Minato</H1>
+                <h4>Regole</h4>
+                <p>Scegli il livello di difficoltà <br>
+                    0 -> 100 caselle / 16bombe<br>
+                    1 ->  80 caselle / 16bombe<br>
+                    2 ->  50 caselle / 16bombe <br>
+                </p>
+                <br>
+                <p>Nel campo minato sono presenti 16 bombe</p>
+            </div>
+
+            <!-- this is the game itself -->
+            <div class="container flex">
+        
+            </div>
         </div>
     </div>
 </body>
