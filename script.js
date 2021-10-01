@@ -43,7 +43,11 @@ function setInitialDifficultyLevel() {
   let valid = false
 
   while (!valid) {
-    var difficulty = parseInt(prompt("inserisci un numero compreso tra 0 e 2"))
+    var difficulty = parseInt(
+      prompt(
+        "Per giocare, inserisci un numero per impostare la difficoltà: 0 => facile, 1 => medio, 2 => difficile"
+      )
+    )
     if (difficulty === 1 || difficulty === 0 || difficulty === 2) {
       valid = true
     }
