@@ -110,22 +110,22 @@ allDivBoxes.forEach((div, index) => {
 })
 
 let counter = 0
+let clickDisabled = false
 // logica programma
 allDivBoxes.forEach((box) => {
   box.addEventListener("click", () => {
+    if (clickDisabled) return
     // controllo la classe assegnata al box
     if (box.classList.contains("bomb")) {
       box.classList.add("red")
       alert("sei saltato in aria")
       alert("il tuo punteggio è " + counter)
       reveal(allDivBoxes)
+      clickDisabled = true
     } else {
       box.classList.add("green")
     }
-
     counter++
-    // se la classe è safe posso andare avanti nel gioco --> coloro la casella di verde
-    // se la classe è bomb sono saltato in aria --> coloro la casella di rosso e scrivo hai perso
   })
 })
 
@@ -143,8 +143,6 @@ function bombs_array(range) {
 
   return finalArray
 }
-
-// bombs_array(100)
 
 function shuffleBombs(array) {
   let counter = array.length
@@ -186,25 +184,3 @@ function reveal(array) {
     }
   })
 }
-
-/* 
-
-i miei errori e come l'avevo pensata, facendo un ciclo dentro ad un altro ciclo
-
-*/
-
-// for (let index = 0; index < bombs_to_distribute.length; index++) {
-//   let element = bombs_to_distribute[index]
-//   console.log(element)
-
-//   for (let j = 0; j < allDivBoxes.length; j++) {
-//     let currentBox = allDivBoxes[j]
-//     currentBox.dataset.safeOrNot = element
-//   }
-// }
-
-// for (let index = 0; index < allDivBoxes.length; index++) {
-//   const currentDiv = allDivBoxes[index]
-//   // currentDiv.classList.add(loopingThroughBombs(bombs_to_distribute))
-//   currentDiv.dataset.test = loopingThroughBombs(bombs_to_distribute)
-// }
