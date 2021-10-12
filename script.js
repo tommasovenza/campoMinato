@@ -113,7 +113,7 @@ let counter = 0
 let clickDisabled = false
 // logica programma
 allDivBoxes.forEach((box) => {
-  box.addEventListener("click", () => {
+  box.addEventListener("click", (e) => {
     if (clickDisabled) return
     // controllo la classe assegnata al box
     if (box.classList.contains("bomb")) {
@@ -122,6 +122,8 @@ allDivBoxes.forEach((box) => {
       alert("il tuo punteggio è " + counter)
       reveal(allDivBoxes)
       clickDisabled = true
+    } else if (box.classList.contains("green")) {
+      counter--
     } else {
       box.classList.add("green")
     }
